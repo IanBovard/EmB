@@ -17,3 +17,16 @@ app.listen(PORT, () => {
 });
 
 app.use(express.static('public'));
+
+
+function sendText() {
+client.messages.create({
+  to: "+17209855392",
+  from: "+18085183735",
+  body: "this is a test"
+}, function(err,message){
+  if(err){
+    console.log(err);
+  }else{
+})
+}
