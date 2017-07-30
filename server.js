@@ -8,5 +8,5 @@ app.use('/user', userRoute);
 app.use(express.static('public'));
 
 app.listen(PORT, () => {
- console.log('hi ya nerd!');
+ console.log('hi!');
 });
