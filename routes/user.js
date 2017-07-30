@@ -11,13 +11,16 @@ router.post('/', (req, res) => {
   client.messages.create({
     to: "+17209855392",
     from: "+18085183735",
-    body: `this is a test`
-  }, function(err,message){
+    body: `https://www.google.com/maps/search/?api=1&query=${req.body.latitude},${req.body.longitude}`
+  },
+  function(err,message){
     if(err){
       console.log(err);
     }else{
+      console.log(client.messages)
     }
   });
+
 });
 
 
