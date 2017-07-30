@@ -1,3 +1,21 @@
-body {
-  background-color: blue;
+body{
+  background-color: #ff9068;
+  position: relative;
+}
+
+.button {
+border-style: outset;
+border-width: 20px;
+height:575px;
+width:575px;
+position : absolute;
+left : 20%;
+margin-top : 475px;
+border-radius: 50%;
+background-color: white;
+}
+
+.button:active{
+  border-style: inset ;
+  border-width: -20px;
 }
