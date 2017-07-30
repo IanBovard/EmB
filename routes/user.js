@@ -8,9 +8,22 @@ const client = require('twilio')(accountSid, authToken);
 
 router.post('/', (req, res) => {
   client.messages.create({
-    to: "+18087974998",
+    to: "+17209855392",
     from: "+18085183735",
     body: `https://www.google.com/maps/search/?api=1&query=${req.body.latitude},${req.body.longitude}`
+  },
+  function(err,messages){
+    if(err){
+      console.log(err);
+    }else{
+      console.log(client.messages);
+    }
+    res.send(200,'ok');
+  });
+  client.messages.create({
+    to: "+18087974998",
+    from: "+18085183735",
+    body: `IAN WE GOIN TO WIN THIS https://www.google.com/maps/search/?api=1&query=${req.body.latitude},${req.body.longitude}`
   },
   function(err,messages){
     if(err){
