@@ -4,18 +4,62 @@ body{
 }
 
 .button {
-border-style: outset;
-border-width: 20px;
-height:575px;
-width:575px;
-position : absolute;
-left : 20%;
-margin-top : 475px;
-border-radius: 50%;
-background-color: white;
+  border-style: outset;
+  border-width: 20px;
+  height:575px;
+  width:575px;
+  position : absolute;
+  left : 20%;
+  margin-top : 475px;
+  cursor: pointer;
+  color: white;
+  padding: 15px 40px;
+  border-radius: 50%;
+  font-size: 22px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, .4);
+  background: #2196F3;
 }
 
+
+.button{
+  position: relative;
+  overflow: hidden;
+}
+.button:focus{
+outline:0;
+}
+.button:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, .5);
+  opacity: 0;
+  border-radius: 50%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(75, 75);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(150, 150);
+  }
+}
 .button:active{
-  border-style: inset ;
+  border-style: inset;
   border-width: -20px;
+}
+.button:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
 }
