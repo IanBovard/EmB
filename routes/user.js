@@ -7,20 +7,19 @@ const client = require('twilio')(accountSid, authToken);
 
 
 router.post('/', (req, res) => {
-  console.log('this is', req.body)
   client.messages.create({
-    to: "+17209855392",
+    to: "+18087974998",
     from: "+18085183735",
     body: `https://www.google.com/maps/search/?api=1&query=${req.body.latitude},${req.body.longitude}`
   },
-  function(err,message){
+  function(err,messages){
     if(err){
       console.log(err);
     }else{
-      console.log(client.messages)
+      console.log(client.messages);
     }
+    res.send(200,'ok');
   });
-
 });
 
 
