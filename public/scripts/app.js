@@ -5,7 +5,7 @@ const button = document.getElementById('button');
 
 let options = {
   enableHighAccuracy: true,
-  timeout: 5000,
+  timeout: 15000,
   maximumAge: 0
 };
 
@@ -22,7 +22,7 @@ function success(pos) {
 
   var oReq = new XMLHttpRequest();
   oReq.addEventListener('load', () => {
-    process.std.out('loading');
+    console.log('loading');
   });
   oReq.addEventListener('error', (event) => {
     console.log('ERROR',event);
